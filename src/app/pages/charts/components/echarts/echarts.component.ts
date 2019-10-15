@@ -9,15 +9,10 @@ import { ChartsService } from './charts.service';
 })
 export class EChartsComponent {
   showloading: boolean = false;
-  BarOption;
-  LineOption;
-  PieOption;
-  AnimationBarOption;
+
+
 
   constructor(private chartsService: ChartsService) {
-    this.BarOption = this.chartsService.getBarOption();
-    this.LineOption = this.chartsService.getLineOption();
-    this.PieOption = this.chartsService.getPieOption();
-    this.AnimationBarOption = this.chartsService.getAnimationBarOption();
+
   }
 }

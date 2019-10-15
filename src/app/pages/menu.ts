@@ -6,12 +6,12 @@ export let MENU_ITEM = [
     },
     {
         path: 'editor',
-        title: 'Pell Editor',
+        title: 'Hunting Statistics',
         icon: 'pencil'
     },
     {
         path: 'icon',
-        title: 'Icon',
+        title: 'Hunting Session',
         icon: 'diamond'
     },
     {
@@ -21,7 +21,7 @@ export let MENU_ITEM = [
     },
     {
         path: 'ui',
-        title: 'UI Element',
+        title: 'Soon change',
         icon: 'paint-brush',
         children: [
             {

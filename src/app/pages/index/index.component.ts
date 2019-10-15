@@ -15,6 +15,6 @@ export class IndexComponent implements OnInit {
   constructor(private _chartsService: ChartsService) { }
 
   ngOnInit() {
-    this.AnimationBarOption = this._chartsService.getAnimationBarOption();
+    
   }
 }

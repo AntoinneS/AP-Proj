@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
   avatarImgSrc: string = 'assets/images/avatar.jpg';
-  userName: string = 'Bknds';
-  userPost: string = 'FrontEnd';
+  userName: string = 'Antoinne';
+  userPost: string = 'WEB APP';
   
   constructor() { }
 
