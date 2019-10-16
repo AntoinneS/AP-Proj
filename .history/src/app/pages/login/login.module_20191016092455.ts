@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../../shared/shared.module';
-// import { routing } from './login.routing'; The routing works without this not exactly sure why. Getting error when used
+import { routing } from './login.routing';
 import { LoginComponent } from './login.component';
 
-@NgModule({
+NgModule({
     imports: [
       CommonModule,
           SharedModule,
-         // routing
+          routing
     ],
     declarations: [LoginComponent]
   })
