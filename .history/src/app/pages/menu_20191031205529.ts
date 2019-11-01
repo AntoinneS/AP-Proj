@@ -6,7 +6,7 @@ export let MENU_ITEM = [
     },
     {
         path: 'editor',
-        title: 'Test Page',
+        title: 'Hunting Statistics',
         icon: 'pencil'
     },
     {

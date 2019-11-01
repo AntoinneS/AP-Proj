@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfileService } from '../../shared/profile.service';
-import { Profile } from '../../shared/profile.model';
-
+import { ProfileService } from 'src/app/shared/profile.service';
+import { Profile } from 'src/app/shared/profile.model';
 //import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-editor',
@@ -10,7 +9,7 @@ import { Profile } from '../../shared/profile.model';
 })
 export class EditorComponent implements OnInit {
 
-  constructor(public service: ProfileService)
+  constructor(private service: ProfileService)
    { }
 
   ngOnInit() {
