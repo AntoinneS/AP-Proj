@@ -1,0 +1,16 @@
+
+          <form #form="ngForm">
+              <div class="form-content">
+                  <div class="form-group">
+                    <input name="email" #email="ngModel" class="form-control" autofocus required email ngModel>
+                  </div>
+
+                  <div class="form-group">
+                      <input type="password" class="form-control input-underline input-lg" id="" placeholder="{{ 'Password' }}">
+                  </div>
+              </div>
+              <a class="btn rounded-btn" [routerLink]="['/pages/index']"  (click)="onLoggedin()">{{ 'Log in' }}</a>
+              &nbsp;
+              <a class="btn rounded-btn" [routerLink]="['/pages/signup']">{{ 'Register'}}</a>
+          </form>
+   

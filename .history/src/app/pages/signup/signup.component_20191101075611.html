@@ -1,0 +1,40 @@
+
+<form #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="Liscence" #Liscence="ngModel" [(ngModel)]=" service.formData.Liscence">
+    <div class="form-group">
+      <label>First Name</label>
+      <input name="FirstName" #FirstName="ngModel" [(ngModel)]="service.formData.FirstName" class="form-control" required>
+      <div class="validation-error" *ngIf="FirstName.invalid && FirstName.touched">This field is required.</div>
+    </div>
+    <div class="form-group">
+      <label>Last name</label>
+      <input name="LastName" #LastName="ngModel" [(ngModel)]="service.formData.LastName" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Telephone Number</label>
+        <input name="tele" #tele="ngModel" [(ngModel)]="service.formData.tele" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Bird Hunting Liscence</label>
+        <input name="Liscence" #Liscence="ngModel" [(ngModel)]="service.formData.Liscence" class="form-control">
+      </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Email</label>
+        <input name="email" #email="ngModel" [(ngModel)]="service.formData.email" class="form-control">
+      </div>
+      <div class="form-group  col-md-6">
+        <label>Password</label>
+        <input name="Password" #Password="ngModel" [(ngModel)]="service.formData.Password" class="form-control" required>
+        <div class="alert alert-danger" role="alert" *ngIf="Password.invalid && (Password.dirty || Password.touched)">Please enter a valid password between 3 to 20 chars.</div>
+      </div>
+      <div class="form-group  col-md-6">
+      <label>Choose a profile picture:</label>
+      <input type="file" name="ProPhoto" accept="image/png, image/jpeg"  #ProPhoto="ngModel" [(ngModel)]="service.formData.ProPhoto" class="form-control">
+     </div>
+    </div>
+    
+    <div class="form-group">
+      <button type="submit" [disabled]="form.invalid" class="btn btn-primary">SUBMIT</button>
+    </div>
+  </form>

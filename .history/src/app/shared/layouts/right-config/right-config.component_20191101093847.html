@@ -1,0 +1,28 @@
+
+
+<button class="config-switch" (click)="configToggle()">
+  <i class="fa fa-tasks" *ngIf="!isConfigToggle"></i>
+  <i class="fa fa-chevron-right" *ngIf="isConfigToggle"></i>
+</button>
+<div class="right-config-wrap" [ngClass]="{'right-config-wrap-on':isConfigToggle}">
+  <div class="config-header">
+    <h3 class="config-title">
+      <i class="fa fa-cogs"></i>
+      <span>Settings</span>
+    </h3>
+    <p class="desc">Additional Options.</p>
+  </div>
+  <ul class="config-content">
+    <li class="config-list">
+      <span>Log Out</span>
+      <switch switchName="config1" switchId="config1" multiple [checked]="true"></switch>
+    </li>
+    <li class="config-list">
+      <button class="btn btn-primary">To Be Updated</button>
+    </li>
+    <li class="config-list">
+      <span>To be updated</span>
+      <switch switchName="config3" switchId="config3" multiple></switch>
+    </li>
+  </ul>
+</div>
