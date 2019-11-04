@@ -54,7 +54,9 @@ C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\Microsoft.CodeDom.Providers.DotNetCom
 C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\Newtonsoft.Json.dll
 C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\System.Net.Http.Formatting.dll
+C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\System.Web.Cors.dll
 C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\System.Web.Helpers.dll
+C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\System.Web.Http.Cors.dll
 C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\System.Web.Http.dll
 C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\System.Web.Http.WebHost.dll
 C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\System.Web.Mvc.dll
@@ -66,10 +68,11 @@ C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\System.Web.WebPages.Razor.dll
 C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\WebGrease.dll
 C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\EntityFramework.xml
 C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\EntityFramework.SqlServer.xml
-C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\Newtonsoft.Json.xml
 C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\System.Net.Http.Formatting.xml
-C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\System.Web.Helpers.xml
 C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\System.Web.Http.xml
+C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\System.Web.Http.Cors.xml
+C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\Newtonsoft.Json.xml
+C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\System.Web.Helpers.xml
 C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\System.Web.Http.WebHost.xml
 C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\System.Web.Mvc.xml
 C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\System.Web.Optimization.xml
@@ -83,7 +86,4 @@ C:\Users\Antoine\AP-Proj\WebApi\WebApi\obj\Debug\WebApi.csproj.CoreCompileInputs
 C:\Users\Antoine\AP-Proj\WebApi\WebApi\obj\Debug\WebApi.csproj.CopyComplete
 C:\Users\Antoine\AP-Proj\WebApi\WebApi\obj\Debug\WebApi.dll
 C:\Users\Antoine\AP-Proj\WebApi\WebApi\obj\Debug\WebApi.pdb
-C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\System.Web.Cors.dll
-C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\System.Web.Http.Cors.dll
-C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\System.Web.Http.Cors.xml
 C:\Users\Antoine\AP-Proj\WebApi\WebApi\obj\Debug\WebApi.csprojAssemblyReference.cache

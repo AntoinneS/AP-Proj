@@ -26,5 +26,7 @@ namespace WebApi.Models
         }
     
         public virtual DbSet<Profile> Profiles { get; set; }
+        public virtual DbSet<HuntingSession> HuntingSessions { get; set; }
+        public virtual DbSet<ViolationType> ViolationTypes { get; set; }
     }
 }

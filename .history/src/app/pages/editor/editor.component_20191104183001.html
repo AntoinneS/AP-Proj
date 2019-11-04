@@ -1,0 +1,114 @@
+<div class = "col-md-5">
+<form #form="ngForm" (submit)="onSubmit(form)">
+  <input type="hidden" name="Liscence" #Liscence="ngModel" [(ngModel)]=" service.formData.Liscence">
+  <div class="form-group">
+    <label>First Name</label>
+    <input name="FirstName" #FirstName="ngModel" [(ngModel)]="service.formData.FirstName" class="form-control input-antoinne" required>
+    <div class="alert alert-danger" role="alert" *ngIf="FirstName.invalid && FirstName.touched">This field is required.</div>
+  </div>
+  <div class="form-group">
+    <label>Last name</label>
+    <input name="LastName" #LastName="ngModel" [(ngModel)]="service.formData.LastName" class="form-control input-antoinne" required>
+    <div class="alert alert-danger" role="alert" *ngIf="LastName.invalid && LastName.touched">This field is required.</div>
+  </div>
+  <div class="form-group">
+      <label>Telephone Number</label>
+      <input name="tele" #tele="ngModel" [(ngModel)]="service.formData.tele" class="form-control input-antoinne" required>
+      <div class="alert alert-danger" role="alert" *ngIf="tele.invalid && tele.touched">This field is required.</div>
+    </div>
+    <div class="form-group">
+      <label>Bird Hunting Liscence</label>
+      <input name="Liscence" #Liscence="ngModel" [(ngModel)]="service.formData.Liscence" class="form-control input-antoinne">
+    </div>
+    <div class="form-group">
+        <label>Total Game Birds Shot</label>
+        <input name="TotGamBirSho" #TotGamBirSho="ngModel" [(ngModel)]="service.formData.TotGamBirSho" class="form-control input-antoinne">      
+      </div>
+
+        <div class="form-group">
+            <label>Total Protected Birds Shot</label>
+            <input name="TotProBirSho" #TotProBirSho="ngModel" [(ngModel)]="service.formData.TotProBirSho" class="form-control input-antoinne">     
+           </div>
+        <div class="form-group">
+      <label>Email</label>
+      <input name="email" #email="ngModel" [(ngModel)]="service.formData.email" class="form-control input-antoinne" autofocus required email ngModel>
+      <div class="alert alert-danger" role="alert" *ngIf="email.invalid && (email.dirty || email.touched)"> Please enter a valid email. </div>
+ <!--   
+    <div class="form-group">
+      <label>Violation Type</label>
+      <input name="VioType" #VioType="ngModel" [(ngModel)]="serv.formData.VioType" class="form-control input-antoinne" ngModel >
+    </div>
+    <div class="form-group">
+        <label>Vio Id</label>
+        <input name="Id" #Id="ngModel" [(ngModel)]="serv.formData.Id" class="form-control input-antoinne" ngModel >
+      </div>
+    -->
+    <div class="form-group  col-md-6">
+    <label>Choose a profile picture:</label>
+    <input type="file" name="ProPhoto" accept="image/png, image/jpeg"  #ProPhoto="ngModel" [(ngModel)]="service.formData.ProPhoto" class="form-control input-antoinne">
+   </div>
+  </div>
+  
+  <div class="form-group">
+    <button type="submit" [disabled]="form.invalid" class="btn btn-primary">SUBMIT</button>
+  </div>
+</form>
+</div>
+
+<div class = "col-md-6">
+    <div class="row">
+        <div class="col-md-12">
+          <card cardTitle="Data Table">
+            <table class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th>FIRSTNAME</th>
+                  <th>LASTNAME</th>
+                  <th>LISCENCE</th>
+                  <th>EMAIL</th>
+                  <th>TELE</th>
+                  <th>GBIRDS</th>
+                  <th>PBIRDS</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let pro of service.list | paginate: { id: 'pager', itemsPerPage: pageSize, currentPage: pageNumber};let index = index" >
+                    <td (click)="populateForm(pro)">{{pro.FirstName}}</td>
+                    <td (click)="populateForm(pro)">{{pro.LastName}}</td>
+                    <td (click)="populateForm(pro)">{{pro.Liscence}}</td>
+                    <td (click)="populateForm(pro)">{{pro.email}}</td>
+                    <td (click)="populateForm(pro)">{{pro.tele}}</td>
+                    <td (click)="populateForm(pro)">{{pro.TotProBirSho}}</td>   
+                    <td (click)="populateForm(pro)">{{pro.TotGamBirSho}}</td>               
+                    <td><button (click)="onDelete(pro.Liscence)" class="btn btn-sm btn-outline-danger">X</button></td>
+                </tr>
+              </tbody>
+            </table>
+            <form class="pagination-wrapper">
+              <div class="form-group pages">
+                <pagination-controls class="my-pagination" id="pager" (pageChange)="pageChanged($event)" maxSize="9" directionLinks="true"
+                  autoHide="true" previousLabel="Prev" nextLabel="Next" screenReaderPaginationLabel="Pagination" screenReaderPageLabel="page"
+                  screenReaderCurrentLabel="You're on page">
+                </pagination-controls>
+              </div>
+              <div class="form-group options pages">
+                <div class="input-group input-group-sm">
+                  <select class="form-control" name="pageChangedName" [(ngModel)]="pageSize">
+                    <option>1</option>
+                    <option>5</option>
+                    <option>10</option>
+                    <option>20</option>
+                    <option>50</option>
+                    <option>100</option>
+                    <option>200</option>
+                  </select>
+                  <span class="input-group-addon addon-right">Per Page</span>
+                </div>
+              </div>
+            </form>
+          </card>
+        </div>
+      </div>
+      </div>  
+      

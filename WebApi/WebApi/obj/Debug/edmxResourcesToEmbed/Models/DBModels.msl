@@ -4,6 +4,8 @@
     <EntitySetMapping Name="Profiles">
       <EntityTypeMapping TypeName="ProfileDBModel.Profile">
         <MappingFragment StoreEntitySet="Profile">
+          <ScalarProperty Name="TotProBirSho" ColumnName="TotProBirSho" />
+          <ScalarProperty Name="TotGamBirSho" ColumnName="TotGamBirSho" />
           <ScalarProperty Name="ProPhoto" ColumnName="ProPhoto" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />
@@ -11,6 +13,25 @@
           <ScalarProperty Name="tele" ColumnName="tele" />
           <ScalarProperty Name="Liscence" ColumnName="Liscence" />
           <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HuntingSessions">
+      <EntityTypeMapping TypeName="ProfileDBModel.HuntingSession">
+        <MappingFragment StoreEntitySet="HuntingSession">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OtherBirdAmt" ColumnName="OtherBirdAmt" />
+          <ScalarProperty Name="GameBirdAmt" ColumnName="GameBirdAmt" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="GameReserve" ColumnName="GameReserve" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViolationTypes">
+      <EntityTypeMapping TypeName="ProfileDBModel.ViolationType">
+        <MappingFragment StoreEntitySet="ViolationType">
+          <ScalarProperty Name="VioType" ColumnName="VioType" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

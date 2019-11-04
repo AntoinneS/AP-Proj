@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="ProfileDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="HuntingSession">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="GameReserve" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date" Type="date" />
+    <Property Name="GameBirdAmt" Type="int" />
+    <Property Name="OtherBirdAmt" Type="int" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
   <EntityType Name="Profile">
     <Key>
       <PropertyRef Name="Liscence" />
@@ -11,8 +21,51 @@
     <Property Name="Liscence" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Password" Type="varchar" MaxLength="50" />
     <Property Name="ProPhoto" Type="image" />
+    <Property Name="TotGamBirSho" Type="int" />
+    <Property Name="TotProBirSho" Type="int" />
   </EntityType>
+  <EntityType Name="ViolationType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VioType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_HuntingSession_Profile">
+    <End Role="Profile" Type="Self.Profile" Multiplicity="1" />
+    <End Role="HuntingSession" Type="Self.HuntingSession" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Profile">
+        <PropertyRef Name="Liscence" />
+      </Principal>
+      <Dependent Role="HuntingSession">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ViolationType_Profile">
+    <End Role="Profile" Type="Self.Profile" Multiplicity="1" />
+    <End Role="ViolationType" Type="Self.ViolationType" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Profile">
+        <PropertyRef Name="Liscence" />
+      </Principal>
+      <Dependent Role="ViolationType">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="ProfileDBModelStoreContainer">
+    <EntitySet Name="HuntingSession" EntityType="Self.HuntingSession" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Profile" EntityType="Self.Profile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ViolationType" EntityType="Self.ViolationType" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_HuntingSession_Profile" Association="Self.FK_HuntingSession_Profile">
+      <End Role="Profile" EntitySet="Profile" />
+      <End Role="HuntingSession" EntitySet="HuntingSession" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ViolationType_Profile" Association="Self.FK_ViolationType_Profile">
+      <End Role="Profile" EntitySet="Profile" />
+      <End Role="ViolationType" EntitySet="ViolationType" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

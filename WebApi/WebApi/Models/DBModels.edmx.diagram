@@ -5,7 +5,11 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="eb27fb4a24544860b9398b4f6a02ed39" Name="Diagram1">
-        <EntityTypeShape EntityType="ProfileDBModel.Profile" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProfileDBModel.Profile" Width="1.5" PointX="3.375" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProfileDBModel.HuntingSession" Width="1.5" PointX="6.5" PointY="1.125" />
+        <EntityTypeShape EntityType="ProfileDBModel.ViolationType" Width="1.5" PointX="1.125" PointY="1.625" />
+        <AssociationConnector Association="ProfileDBModel.FK_HuntingSession_Profile" />
+        <AssociationConnector Association="ProfileDBModel.FK_ViolationType_Profile" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

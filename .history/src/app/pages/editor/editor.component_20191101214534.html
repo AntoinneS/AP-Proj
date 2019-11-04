@@ -1,0 +1,57 @@
+<blockquote class="blockquote ml-5">
+  <h2>My Bank Accounts</h2>
+  <footer class="blockquote-footer">
+      Using inline table editing with <i>Angular 8</i> and <i>Asp.Net Core</i>
+  </footer>
+</blockquote>
+
+<div class="grid-table">
+  <div class="thead">
+      <div class="tr">
+          <div class="td">Account No.</div>
+          <div class="td">Account Holder</div>
+          <div class="td">Bank</div>
+          <div class="td">IFSC</div>
+          <div class="td">
+              <button class="btn btn-outline-success">
+                  <i class="fa fa-plus"></i> New Account
+              </button>
+          </div>
+          <div class="td">
+              <span *ngIf="" class="elementToFadeInAndOut">
+                  <i class="fas fa-check-circle "></i>
+                
+              </span>
+          </div>
+      </div>
+  </div>
+  <div class="tbody">
+      <form class="tr" [formGroup]="">
+          <div class="td">
+              <input class="form-control" formControlName="accountNumber">
+          </div>
+          <div class="td">
+              <input class="form-control" formControlName="accountHolder">
+          </div>
+          <div class="td">
+              <select class="form-control" formControlName="bankID">
+                  <option value="0">Select</option>
+              
+              </select>
+          </div>
+          <div class="td">
+              <input class="form-control" formControlName="IFSC">
+          </div>
+          <div class="td">
+              <button type="submit" class="btn" >
+                  [ngClass]="(fg.get('bankAccountID').value==0)?'btn-success':'btn-outline-dark'"><i
+                      class="far fa-save fa-lg"></i>
+                  
+              </button>
+              <button class="btn btn-light ml-1" (click)="onDelete(fg.get('bankAccountID').value,i)">
+                  <i class="far fa-trash-alt fa-lg text-danger"></i>
+              </button>
+          </div>
+      </form>
+  </div>
+</div>

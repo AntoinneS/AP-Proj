@@ -21,5 +21,10 @@ namespace WebApi.Models
         public int Liscence { get; set; }
         public string Password { get; set; }
         public byte[] ProPhoto { get; set; }
+        public Nullable<int> TotGamBirSho { get; set; }
+        public Nullable<int> TotProBirSho { get; set; }
+    
+        public virtual HuntingSession HuntingSession { get; set; }
+        public virtual ViolationType ViolationType { get; set; }
     }
 }

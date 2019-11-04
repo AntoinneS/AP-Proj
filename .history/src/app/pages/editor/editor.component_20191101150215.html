@@ -1,0 +1,9 @@
+<table class="table table-hover">
+  <tr *ngFor="let pro of service.list">
+    <td (click)="populateForm(pro)">[{{pro.TotGamBirSho}}]-{{pro.VioList}}</td>
+    <td (click)="populateForm(pro)">[{{pro.Password}}]-{{pro.FirstName}}</td>
+    <td (click)="populateForm(pro)">{{pro.tele}}</td>
+    <td (click)="populateForm(pro)">{{pro.email}}</td>
+    <td><button (click)="onDelete(pro.Liscence)" class="btn btn-sm btn-outline-danger">X</button></td>
+  </tr>
+</table>

@@ -5,6 +5,16 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="ProfileDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="HuntingSession">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="GameReserve" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="date" />
+          <Property Name="GameBirdAmt" Type="int" />
+          <Property Name="OtherBirdAmt" Type="int" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
         <EntityType Name="Profile">
           <Key>
             <PropertyRef Name="Liscence" />
@@ -16,9 +26,52 @@
           <Property Name="Liscence" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Password" Type="varchar" MaxLength="50" />
           <Property Name="ProPhoto" Type="image" />
+          <Property Name="TotGamBirSho" Type="int" />
+          <Property Name="TotProBirSho" Type="int" />
         </EntityType>
+        <EntityType Name="ViolationType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VioType" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_HuntingSession_Profile">
+          <End Role="Profile" Type="Self.Profile" Multiplicity="1" />
+          <End Role="HuntingSession" Type="Self.HuntingSession" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Profile">
+              <PropertyRef Name="Liscence" />
+            </Principal>
+            <Dependent Role="HuntingSession">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ViolationType_Profile">
+          <End Role="Profile" Type="Self.Profile" Multiplicity="1" />
+          <End Role="ViolationType" Type="Self.ViolationType" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Profile">
+              <PropertyRef Name="Liscence" />
+            </Principal>
+            <Dependent Role="ViolationType">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="ProfileDBModelStoreContainer">
+          <EntitySet Name="HuntingSession" EntityType="Self.HuntingSession" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Profile" EntityType="Self.Profile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ViolationType" EntityType="Self.ViolationType" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_HuntingSession_Profile" Association="Self.FK_HuntingSession_Profile">
+            <End Role="Profile" EntitySet="Profile" />
+            <End Role="HuntingSession" EntitySet="HuntingSession" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ViolationType_Profile" Association="Self.FK_ViolationType_Profile">
+            <End Role="Profile" EntitySet="Profile" />
+            <End Role="ViolationType" EntitySet="ViolationType" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -35,10 +88,67 @@
           <Property Name="Liscence" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ProPhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="TotGamBirSho" Type="Int32" />
+          <Property Name="TotProBirSho" Type="Int32" />
+          <NavigationProperty Name="HuntingSession" Relationship="ProfileDBModel.FK_HuntingSession_Profile" FromRole="Profile" ToRole="HuntingSession" />
+          <NavigationProperty Name="ViolationType" Relationship="ProfileDBModel.FK_ViolationType_Profile" FromRole="Profile" ToRole="ViolationType" />
         </EntityType>
         <EntityContainer Name="DBModel" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Profiles" EntityType="Self.Profile" />
+          <EntitySet Name="HuntingSessions" EntityType="ProfileDBModel.HuntingSession" />
+          <EntitySet Name="ViolationTypes" EntityType="ProfileDBModel.ViolationType" />
+          <AssociationSet Name="FK_HuntingSession_Profile" Association="ProfileDBModel.FK_HuntingSession_Profile">
+            <End Role="Profile" EntitySet="Profiles" />
+            <End Role="HuntingSession" EntitySet="HuntingSessions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ViolationType_Profile" Association="ProfileDBModel.FK_ViolationType_Profile">
+            <End Role="Profile" EntitySet="Profiles" />
+            <End Role="ViolationType" EntitySet="ViolationTypes" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="HuntingSession">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="GameReserve" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="GameBirdAmt" Type="Int32" />
+          <Property Name="OtherBirdAmt" Type="Int32" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Profile" Relationship="ProfileDBModel.FK_HuntingSession_Profile" FromRole="HuntingSession" ToRole="Profile" />
+        </EntityType>
+        <EntityType Name="ViolationType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VioType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Profile" Relationship="ProfileDBModel.FK_ViolationType_Profile" FromRole="ViolationType" ToRole="Profile" />
+        </EntityType>
+        <Association Name="FK_HuntingSession_Profile">
+          <End Type="ProfileDBModel.Profile" Role="Profile" Multiplicity="1" />
+          <End Type="ProfileDBModel.HuntingSession" Role="HuntingSession" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Profile">
+              <PropertyRef Name="Liscence" />
+            </Principal>
+            <Dependent Role="HuntingSession">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ViolationType_Profile">
+          <End Type="ProfileDBModel.Profile" Role="Profile" Multiplicity="1" />
+          <End Type="ProfileDBModel.ViolationType" Role="ViolationType" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Profile">
+              <PropertyRef Name="Liscence" />
+            </Principal>
+            <Dependent Role="ViolationType">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -48,6 +158,8 @@
           <EntitySetMapping Name="Profiles">
             <EntityTypeMapping TypeName="ProfileDBModel.Profile">
               <MappingFragment StoreEntitySet="Profile">
+                <ScalarProperty Name="TotProBirSho" ColumnName="TotProBirSho" />
+                <ScalarProperty Name="TotGamBirSho" ColumnName="TotGamBirSho" />
                 <ScalarProperty Name="ProPhoto" ColumnName="ProPhoto" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
@@ -55,6 +167,25 @@
                 <ScalarProperty Name="tele" ColumnName="tele" />
                 <ScalarProperty Name="Liscence" ColumnName="Liscence" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HuntingSessions">
+            <EntityTypeMapping TypeName="ProfileDBModel.HuntingSession">
+              <MappingFragment StoreEntitySet="HuntingSession">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="OtherBirdAmt" ColumnName="OtherBirdAmt" />
+                <ScalarProperty Name="GameBirdAmt" ColumnName="GameBirdAmt" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="GameReserve" ColumnName="GameReserve" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViolationTypes">
+            <EntityTypeMapping TypeName="ProfileDBModel.ViolationType">
+              <MappingFragment StoreEntitySet="ViolationType">
+                <ScalarProperty Name="VioType" ColumnName="VioType" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
