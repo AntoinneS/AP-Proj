@@ -87,3 +87,11 @@ C:\Users\Antoine\AP-Proj\WebApi\WebApi\obj\Debug\WebApi.csproj.CopyComplete
 C:\Users\Antoine\AP-Proj\WebApi\WebApi\obj\Debug\WebApi.dll
 C:\Users\Antoine\AP-Proj\WebApi\WebApi\obj\Debug\WebApi.pdb
 C:\Users\Antoine\AP-Proj\WebApi\WebApi\obj\Debug\WebApi.csprojAssemblyReference.cache
+C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\roslyn\System.Net.Http.dll
+C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Antoine\AP-Proj\WebApi\WebApi\bin\roslyn\System.Threading.Tasks.Extensions.dll
