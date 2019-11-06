@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ProfileService } from '../../shared/profile.service';
 import { Profile } from '../../shared/profile.model';
-import { IndexComponent } from '../index/index.component';
 
 @Component({
     selector: 'app-login',
@@ -54,15 +53,7 @@ export class LoginComponent implements OnInit {
 
   login(){
       console.log("login button press",this.email);
-      this.service.Authenticate(this.email,this.Password).subscribe(res =>{
-          console.log("Login Successful", res);
-          //if (res = true){
-            
-              //path: 'pages/index',  component: IndexComponent
-          
-         // }
-      });
-
+      this.service.Authenticate(this.email,this.Password);
   }
 
   updateRecord(form: NgForm) {

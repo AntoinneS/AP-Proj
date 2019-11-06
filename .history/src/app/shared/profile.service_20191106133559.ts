@@ -22,6 +22,7 @@ export class ProfileService {
   currentuser: any;
 
   IsLoggedIn(){
+
     if (this.currentuser == null){
     return(false);
     } else {

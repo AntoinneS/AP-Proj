@@ -12,11 +12,11 @@
 
                   <div class="form-group">
                     <label>Password</label>
-                    <input name="Password" [(ngModel)]="Password" class="form-control input-antoinne" required minlength="3" maxlength="20" ngModel >
+                    <input name="Password" [(ngModel)]= "Password" class="form-control input-antoinne" required minlength="3" maxlength="20" ngModel >
                     <!-- <div class="alert alert-danger" role="alert" *ngIf="Password.invalid && (Password.dirty || Password.touched)">Please enter a valid password between 3 to 20 chars.</div> -->
                   </div>
             
-              <a class="btn rounded-btn" [routerLink]="['/pages/index']" (click)="login()"  >{{ 'Log in' }}</a>
+              <a class="btn rounded-btn" (click)="login()"  >{{ 'Log in' }}</a>
               &nbsp;
               <a class="btn rounded-btn" [routerLink]="['/pages/signup']">{{ 'Register'}}</a>
           </form>

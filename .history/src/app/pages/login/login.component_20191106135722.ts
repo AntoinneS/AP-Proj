@@ -57,9 +57,7 @@ export class LoginComponent implements OnInit {
       this.service.Authenticate(this.email,this.Password).subscribe(res =>{
           console.log("Login Successful", res);
           //if (res = true){
-            
-              //path: 'pages/index',  component: IndexComponent
-          
+         
          // }
       });
 

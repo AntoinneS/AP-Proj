@@ -7,17 +7,11 @@ import { ProfileService } from '../../shared/profile.service';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  EmailS: string;
-  FirstS: string;
-  LastS: string;
-  TeleS: string;
+  status: string;
   constructor(public service: ProfileService) { }
 
   ngOnInit() {
-    this.EmailS =this.service.currentuser.email;
-    this.FirstS =this.service.currentuser.FirstName;
-    this.LastS = this.service.currentuser.LastName;
-    this.TeleS = this.service.currentuser.tele;
+this.status = "Hello" + this.service.currentuser.email;
    }
 
   Profiles(){

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Profile } from './profile.model';
-import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -32,10 +31,7 @@ export class ProfileService {
 
   Authenticate(email:string, Password:string){
     let loginData ={email:email,Password:Password};
-    return this.http.post(this.rootURL+'/login',loginData).pipe(map(result=>{
-      this.currentuser = result;
-      return (result);
-    }));
+    return this.http.post(this.rootURL+'/login',loginData);
    }
 
   refreshList(){
