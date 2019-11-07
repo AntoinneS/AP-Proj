@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using WebApi.Models;
+using WebApi.ViewModels;
 
 namespace WebApi.Controllers
 {
@@ -72,17 +73,40 @@ namespace WebApi.Controllers
 
         // POST: api/HuntingSession
         [ResponseType(typeof(HuntingSession))]
-        public IHttpActionResult PostHuntingSession(HuntingSession huntingSession)
+        public IHttpActionResult PostHuntingSession(HuntingViewModel data)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+      HuntingSession huntingSession = new HuntingSession {
+        Date = data.Date,
+        GameBirdAmt = data.GameBirdAmt,
+        GameReserve = data.GameReserve,
+        OtherBirdAmt = data.OtherBirdAmt,
+        Id = data.Id,
+        Profile = db.Profiles.Find(data.Id)
+      };
+      try
+      {
+        db.HuntingSessions.Add(huntingSession);
+        db.SaveChanges();
+        huntingSession.Profile = null;
+        return Ok(new ResultVM<HuntingSession> {
+          success=true,
+          data=huntingSession
+        });
+      }
+      catch (Exception e) {
+        //log
+        return Ok(new ResultVM<HuntingSession>
+        {
+          success = false,
+          data = null,
+          message = e.Message
+        });
+      }
 
-            db.HuntingSessions.Add(huntingSession);
-            db.SaveChanges();
-
-            return CreatedAtRoute("DefaultApi", new { id = huntingSession.Id }, huntingSession);
         }
 
         // DELETE: api/HuntingSession/5

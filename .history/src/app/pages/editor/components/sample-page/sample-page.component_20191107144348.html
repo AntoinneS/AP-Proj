@@ -1,0 +1,28 @@
+<p>
+  sample-page works!
+</p>
+<form>
+  <div class="form-group">
+    <label>Game Reserve</label>
+    <input [(ngModel)]="inputData.GameReserve" type="text" name="GameReserve" />
+  </div>
+  <div class="form-group">
+    <label>Date</label>
+    <input [(ngModel)]="inputData.Date" type="date" name="Date" />
+  </div>
+  <div class="form-group">
+    <label>Game Bird Amount</label>
+    <input [(ngModel)]="inputData.GameBirdAmt" type="number" name="GameBirdAmt" />
+  </div>
+  <div class="form-group">
+    <label>Other Bird Amount</label>
+    <input [(ngModel)]="inputData.OtherBirdAmt" type="number" name="OtherBirdAmt" />
+  </div>
+  <div class="form-group">
+    <label>Id</label>
+    <input [(ngModel)]="inputData.Id" type="number" name="Id" />
+  </div>
+  <div class="form-group">
+    <button class="btn" (click)="submitData()">Submit</button>
+  </div>
+</form>

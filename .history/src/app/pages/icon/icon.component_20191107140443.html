@@ -1,0 +1,39 @@
+
+  <div class="row justify-content-md-center">
+<div class = "col-md-3">
+  <form #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="Liscence" #Liscence="ngModel" [(ngModel)]=" service.formData.Liscence">
+    <div class="form-group">
+      <label>Bird Hunting Liscence</label>
+      <input name="Liscence" #Liscence="ngModel" [(ngModel)]="service.formData.Liscence" class="form-control input-antoinne" required>
+      <div class="alert alert-danger" role="alert" *ngIf="Liscence.invalid && Liscence.touched">This field is required.</div>
+    </div>
+    <div class="form-group">
+      <label>Game Reserve</label>
+      <input name="GameReserve" #GameReserve="ngModel" [(ngModel)]="service.formData.HuntingSessio" class="form-control input-antoinne">      
+    </div>
+    <div class="form-group">
+      <label>Date</label>
+      <input name="Date" #Date="ngModel" [(ngModel)]="service.formData.HuntingSession" class="form-control input-antoinne" required>
+      <div class="alert alert-danger" role="alert" *ngIf="Date.invalid && Date.touched">This field is required.</div>
+    </div>
+    <div class="form-group">
+        <label>Game Bird Amount</label>
+        <input name="GameBirdAmt" #GameBirdAmt="ngModel" [(ngModel)]="service.formData.HuntingSession" class="form-control input-antoinne" required>
+        <div class="alert alert-danger" role="alert" *ngIf="GameBirdAmt.invalid && GameBirdAmt.touched">This field is required.</div>
+      </div>
+      <div class="form-group">
+        <label>Other Bird Amount</label>
+        <input name="OtherBirdAmt" #OtherBirdAmt="ngModel" [(ngModel)]="service.formData.HuntingSession" class="form-control input-antoinne">
+      </div>
+      <div class="form-group">
+          <label>ID</label>
+          <input name="Id" #Id="ngModel" [(ngModel)]="service.formData.HuntingSession" class="form-control input-antoinne">      
+        </div>
+    <div class="form-group">
+      <button type="submit" [disabled]="form.invalid" class="btn btn-success" (click)="notification('success')">SUBMIT</button>
+     
+    </div>
+  </form>
+  </div>
+  </div>
