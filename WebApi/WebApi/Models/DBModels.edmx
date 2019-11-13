@@ -29,12 +29,6 @@
           <Property Name="TotGamBirSho" Type="int" />
           <Property Name="TotProBirSho" Type="int" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'ProfileDB.dbo.Roles' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Roles">
-          <Property Name="id" Type="int" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" />
-        </EntityType>-->
         <EntityType Name="ViolationType">
           <Key>
             <PropertyRef Name="Id" />

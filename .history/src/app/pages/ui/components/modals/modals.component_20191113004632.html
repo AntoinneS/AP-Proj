@@ -1,0 +1,213 @@
+<card cardTitle="Administrative Tasks">
+  <div class = "col-md-3">
+  <button class="btn btn-primary" (click)="openModal(myModal)">Identify Hunting Zone</button>
+</div>
+<div class = "col-md-3">
+  <button class="btn btn-primary" (click)="thirdModal.open()">Record Hunting Session</button>
+</div>
+<div class = "col-md-3">
+  <button class="btn btn-primary" (click)="fifthModal.open()">View Birds Hunted</button>
+</div> 
+<div class = "col-md-3">
+  <button class="btn btn-primary" (click)="sixthModal.open()">View All Bag Violations</button>
+</div>
+</card>
+
+<modal #myModal>
+  <modal-header>
+    <h3>Identify Hunting Zones</h3>
+  </modal-header>
+  <modal-content>
+    <div class="col-md-12">
+    <div class="form-group">
+      
+        <input class="checkbox" type="checkbox" id="default-checkbox1" checked>
+        <label class="check-label" for="default-checkbox1">The Great Morass Holland Bay Game Reserve, St. Thomas</label>
+        <br/>
+     
+    
+      
+        <input class="checkbox" type="checkbox" id="default-checkbox2">
+        <label class="check-label" for="default-checkbox2">Portmore and Greater Portmore Game Reserve, St. Catherine</label>
+        <br/>
+  
+        <input class="checkbox" type="checkbox" id="default-checkbox3">
+        <label class="check-label" for="default-checkbox3">Cabarita Point, Game Reserve, St. Catherine</label>
+        <br/>
+    
+        <input class="checkbox" type="checkbox" id="default-checkbox4" checked>
+        <label class="check-label" for="default-checkbox4">Amity Hall Game Reserve, St. Catherine</label>
+        <br/>
+  
+        <input class="checkbox" type="checkbox" id="default-checkbox5">
+        <label class="check-label" for="default-checkbox5">The Long Island Game Reserve, Clarendon</label>
+        <br/>
+   
+        <input class="checkbox" type="checkbox" id="default-checkbox6">
+        <label class="check-label" for="default-checkbox6">West Harbour-Peake Bay Game Reserve, Clarendon</label>
+        <br/>
+    
+        <input class="checkbox" type="checkbox" id="default-checkbox7" checked>
+        <label class="check-label" for="default-checkbox7">Alligator Pond, Gut River and Canoe Valley Game Reserve Manchester</label>
+        <br/>
+     
+        <input class="checkbox" type="checkbox" id="default-checkbox8">
+        <label class="check-label" for="default-checkbox8">Mason River Savanna Game Reserve, Clarendon</label>
+        <br/>
+   
+        <input class="checkbox" type="checkbox" id="default-checkbox9">
+        <label class="check-label" for="default-checkbox9">The Upper Morass Black River Game Reserve, St. Elizabeth</label>
+        <br/>
+     
+        <input class="checkbox" type="checkbox" id="default-checkbox10" checked>
+        <label class="check-label" for="default-checkbox10">The Black River Lower Morass Game Reserve, St. Elizabeth</label>
+        <br/>
+     
+        <input class="checkbox" type="checkbox" id="default-checkbox11">
+        <label class="check-label" for="default-checkbox11">The Great Morass, Negril Game Reserve, Westmoreland and Hanover</label>
+        <br/>
+     
+        <input class="checkbox" type="checkbox" id="default-checkbox12">
+        <label class="check-label" for="default-checkbox12">Bogue Lagoon Creek Game Reserve, St James</label>
+        <br/>
+   
+        <input class="checkbox" type="checkbox" id="default-checkbox13" checked>
+        <label class="check-label" for="default-checkbox13">Fairy Hill-Port Antonio Game Reserve, Portlan</label>
+        <br/>
+    
+        <input class="checkbox" type="checkbox" id="default-checkbox14">
+        <label class="check-label" for="default-checkbox14">Glistening Waters Game Reserve, Trelawny</label>
+        <br/>
+ 
+        <input class="checkbox" type="checkbox" id="default-checkbox15">
+        <label class="check-label" for="default-checkbox15">Reigate Game Reserve, Manchester</label>
+        <br/>
+ 
+        <input class="checkbox" type="checkbox" id="default-checkbox16" checked>
+        <label class="check-label" for="default-checkbox16">Stanmore Hill Game Reserve, St. Elizabeth</label>
+        <br/>
+ 
+        <input class="checkbox" type="checkbox" id="default-checkbox17">
+        <label class="check-label" for="default-checkbox17">Knapdale Game Reserve, St. Ann</label>
+        <br/>
+     
+        <input class="checkbox" type="checkbox" id="default-checkbox18">
+        <label class="check-label" for="default-checkbox18">Kingston and St. Andrew Game Reserve</label>
+        <br/>
+      </div>
+    </div>
+  </modal-content>
+  <modal-footer>
+    <button class="btn btn-primary" (click)="closeModal(myModal)">close</button>
+  </modal-footer>
+</modal>
+
+<modal #thirdModal [closeOnEscape]="false" [closeOnOutsideClick]="false">
+  <modal-header>
+    <h3>modal that cannot be simply closed</h3>
+  </modal-header>
+  <modal-content>
+      <div class="row justify-content-md-center">
+          <div class = "col-md-7">
+            <form #form="ngForm" (submit)="submitData(form)">
+              <div class="form-group">
+                <label class= "control-label">Game Reserve</label>
+                <select [(ngModel)]="inputData.GameReserve" type="text" name="GameReserve" class="form-control input-antoinne">
+                  <option value="option1">The Great Morass Holland Bay Game Reserve, St. Thomas</option>
+                  <option value="option2">Portmore and Greater Portmore Game Reserve, St. Catherine</option>
+                  <option value="option3">Cabarita Point, Game Reserve, St. Catherine</option>
+                  <option value="option4">Amity Hall Game Reserve, St. Catherine</option>
+                  <option value="option5">The Long Island Game Reserve, Clarendon</option>
+                  <option value="option6">West Harbour-Peake Bay Game Reserve, Clarendon</option>
+                  <option value="option7">Alligator Pond, Gut River and Canoe Valley Game Reserve Manchester</option>
+                  <option value="option8">Mason River Savanna Game Reserve, Clarendon</option>
+                  <option value="option9">The Upper Morass Black River Game Reserve, St. Elizabeth</option>
+                  <option value="option10">The Black River Lower Morass Game Reserve, St. Elizabeth</option>
+                  <option value="option11">The Great Morass Parottee Game Reserve, St.  Elizabeth</option>
+                  <option value="option12">The Great Morass, Negril Game Reserve, Westmoreland and Hanover</option>
+                  <option value="option13">Bogue Lagoon Creek Game Reserve, St James</option>
+                  <option value="option14">Fairy Hill-Port Antonio Game Reserve, Portland</option>
+                  <option value="option15">Glistening Waters Game Reserve, Trelawny</option>
+                  <option value="option16">Reigate Game Reserve, Manchester </option>
+                  <option value="option17">Stanmore Hill Game Reserve, St. Elizabeth</option>
+                  <option value="option18">Knapdale Game Reserve, St. Ann</option>
+                  <option value="option19">Kingston and St. Andrew Game Reserve </option>
+              </select>
+              </div>
+              <div class="form-group">
+                <label>Date</label>
+                <input  [(ngModel)]="inputData.Date" type="date" name="Date" #Date="ngModel" class="form-control input-antoinne" required>
+                <div class="alert alert-danger" role="alert" *ngIf="Date.invalid && Date.touched">This field is required.</div>
+              </div>
+              <div class="form-group">
+                  <label>Game Bird Amount</label>
+                  <input  [(ngModel)]="inputData.GameBirdAmt" #GameBirdAmt ="ngModel" type="number" name="GameBirdAmt"class="form-control input-antoinne" required>
+                  <div class="alert alert-danger" role="alert" *ngIf="GameBirdAmt.invalid && GameBirdAmt.touched">This field is required.</div>
+                </div>
+                <div class="form-group">
+                  <label>Other Bird Amount</label>
+                  <input  [(ngModel)]="inputData.OtherBirdAmt" #OtherBirdAmt = "ngModel" type="number" name="OtherBirdAmt" class="form-control input-antoinne" required>
+                  <div class="alert alert-danger" role="alert" *ngIf="OtherBirdAmt.invalid && OtherBirdAmt.touched">This field is required.</div>
+                </div>
+                <div class="form-group">
+                    <label>ID</label>
+                    <input  [(ngModel)]="inputData.Id" #Id = "ngModel" type="number" name="Id" class="form-control input-antoinne" required>    
+                    <div class="alert alert-danger" role="alert" *ngIf="Id.invalid && Id.touched">This field is required.</div>  
+                  </div>
+              <div class="form-group">
+                <button type="submit" [disabled]="form.invalid" class="btn btn-success" (click)="notification('success')">SUBMIT</button>
+               
+              </div>
+            </form>
+            </div>
+            </div>
+  </modal-content>
+  <modal-footer>
+    <button class="btn btn-primary" (click)="closeModal(thirdModal)">close</button>
+  </modal-footer>
+</modal>
+
+<modal #fifthModal modalClass="modal-lg">
+  <modal-header>
+    <h3>large modal</h3>
+  </modal-header>
+  <modal-content>
+    <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse.
+      Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.
+      Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis
+      cardigan american apparel, butcher voluptate nisi qui.</p>
+  </modal-content>
+  <modal-footer>
+    <button class="btn btn-primary" (click)="closeModal(fifthModal)">close</button>
+  </modal-footer>
+</modal>
+
+<modal #sixthModal modalClass="modal-sm">
+  <modal-header>
+    <h3>small modal</h3>
+  </modal-header>
+  <modal-content>
+    <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse.
+      Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.
+      Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis
+      cardigan american apparel, butcher voluptate nisi qui.</p>
+  </modal-content>
+  <modal-footer>
+    <button class="btn btn-primary" (click)="closeModal(sixthModal)">close</button>
+  </modal-footer>
+</modal>
+
+<modal #seventhModal (onClose)="onClose()">
+  <modal-header>
+    <h3>it opens first modal after you close it</h3>
+  </modal-header>
+  <modal-content>
+    <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse.
+      Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.
+      Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis
+      cardigan american apparel, butcher voluptate nisi qui.</p>
+  </modal-content>
+  <modal-footer>
+    <button class="btn btn-primary" (click)="closeModal(seventhModal)">close</button>
+  </modal-footer>
+</modal>

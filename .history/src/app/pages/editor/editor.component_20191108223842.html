@@ -1,0 +1,61 @@
+<!--<app-sample-page></app-sample-page> --> 
+
+
+
+<div class = "col-md-7">
+    <div class="row">
+        <div class="col-md-12">
+          <card cardTitle="Data Table">
+            <table class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th>FNAME</th>
+                  <th>LNAME</th>
+                  <th>LISCENCE</th>
+                  <th>EMAIL</th>
+                  <th>TELE</th>
+                  <th>GBIRDS</th>
+                  <th>PBIRDS</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let pro of service.list | paginate: { id: 'pager', itemsPerPage: pageSize, currentPage: pageNumber};let index = index" >
+                    <td (click)="populateForm(pro)">{{pro.FirstName }}</td>
+                    <td (click)="populateForm(pro)">{{pro.LastName}}</td>
+                    <td (click)="populateForm(pro)">{{pro.Liscence}}</td>
+                    <td (click)="populateForm(pro)">{{pro.email}}</td>
+                    <td (click)="populateForm(pro)">{{pro.tele}}</td>
+                    <td (click)="populateForm(pro)">{{pro.TotProBirSho}}</td>   
+                    <td (click)="populateForm(pro)">{{pro.TotGamBirSho}}</td>               
+                    <td><button (click)="onDelete(pro.Liscence)" class="btn btn-sm btn-outline-danger">X</button></td>
+                </tr>
+              </tbody>
+            </table>
+            <form class="pagination-wrapper">
+              <div class="form-group pages">
+                <pagination-controls class="my-pagination" id="pager" (pageChange)="pageChanged($event)" maxSize="9" directionLinks="true"
+                  autoHide="true" previousLabel="Prev" nextLabel="Next" screenReaderPaginationLabel="Pagination" screenReaderPageLabel="page"
+                  screenReaderCurrentLabel="You're on page">
+                </pagination-controls>
+              </div>
+              <div class="form-group options pages">
+                <div class="input-group input-group-sm">
+                  <select class="form-control" name="pageChangedName" [(ngModel)]="pageSize">
+                    <option>1</option>
+                    <option>5</option>
+                    <option>10</option>
+                    <option>20</option>
+                    <option>50</option>
+                    <option>100</option>
+                    <option>200</option>
+                  </select>
+                  <span class="input-group-addon addon-right">Per Page</span>
+                </div>
+              </div>
+            </form>
+          </card>
+        </div>
+      </div>
+      </div>  
+      
