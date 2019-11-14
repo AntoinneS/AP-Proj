@@ -6,8 +6,13 @@ export let MENU_ITEM = [
     },
     {
         path: 'editor',
-        title: 'Automatic Hunting Session',
+        title: 'Test',
         icon: 'pencil'
+    },
+    {
+        path: 'icon',
+        title: 'Test',
+        icon: 'diamond'
     },
     {
         path: 'profile',

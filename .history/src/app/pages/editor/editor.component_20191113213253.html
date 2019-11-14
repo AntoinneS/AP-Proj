@@ -82,7 +82,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor = "let pro of service.list | paginate: { id: 'pager', itemsPerPage: pageSize, currentPage: pageNumber};let index = index" >
+                <tr *ngFor="let pro of (service.list | async)  | paginate: { id: 'pager', itemsPerPage: pageSize, currentPage: pageNumber};let index = index" >
                     <td (click)="populateForm(pro)">{{pro.FirstName  }}</td>
                     <td (click)="populateForm(pro)">{{pro.LastName}}</td>
                     <td (click)="populateForm(pro)">{{pro.Liscence}}</td>

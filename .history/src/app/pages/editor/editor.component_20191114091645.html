@@ -83,13 +83,13 @@
               </thead>
               <tbody>
                 <tr *ngFor = "let pro of service.list | paginate: { id: 'pager', itemsPerPage: pageSize, currentPage: pageNumber};let index = index" >
-                    <td (click)="populateForm(pro)">{{pro.FirstName  }}</td>
-                    <td (click)="populateForm(pro)">{{pro.LastName}}</td>
-                    <td (click)="populateForm(pro)">{{pro.Liscence}}</td>
-                    <td (click)="populateForm(pro)">{{pro.email}}</td>
-                    <td (click)="populateForm(pro)">{{pro.tele}}</td>
-                    <td (click)="populateForm(pro)">{{pro.TotProBirSho}}</td>   
-                    <td (click)="populateForm(pro)">{{pro.TotGamBirSho}}</td>               
+                    <td (click)="populateForm(pro)">{{pro.FirstName | async }}</td>
+                    <td (click)="populateForm(pro)">{{pro.LastName | async}}</td>
+                    <td (click)="populateForm(pro)">{{pro.Liscence | async}}</td>
+                    <td (click)="populateForm(pro)">{{pro.email | async}}</td>
+                    <td (click)="populateForm(pro)">{{pro.tele | async}}</td>
+                    <td (click)="populateForm(pro)">{{pro.TotProBirSho | async}}</td>   
+                    <td (click)="populateForm(pro)">{{pro.TotGamBirSho | async}}</td>               
                     <td><button (click)="onDelete(pro.Liscence)" class="btn btn-sm btn-outline-danger">X</button></td>
                 </tr>
               </tbody>

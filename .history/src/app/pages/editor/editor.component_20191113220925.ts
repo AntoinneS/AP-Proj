@@ -19,6 +19,7 @@ profile: Profile[];
   /* pagination Info */
   pageSize = 10;
   pageNumber = 1;
+  docs: any;
   
   constructor(public service: ProfileService, public _globalService: GlobalService)
    {
@@ -28,6 +29,13 @@ profile: Profile[];
   ngOnInit() {
     this.service.refreshList();
     this.resetForm();
+}
+
+refreshProfileList(form: NgForm){
+  this.service.postProfile(form.value).subscribe(res => {
+    res !== null ;
+     this.docs = res.docs;
+  })
 }
 
 notification(type) {

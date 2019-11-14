@@ -82,14 +82,14 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor = "let pro of service.list | paginate: { id: 'pager', itemsPerPage: pageSize, currentPage: pageNumber};let index = index" >
-                    <td (click)="populateForm(pro)">{{pro.FirstName  }}</td>
-                    <td (click)="populateForm(pro)">{{pro.LastName}}</td>
-                    <td (click)="populateForm(pro)">{{pro.Liscence}}</td>
-                    <td (click)="populateForm(pro)">{{pro.email}}</td>
-                    <td (click)="populateForm(pro)">{{pro.tele}}</td>
-                    <td (click)="populateForm(pro)">{{pro.TotProBirSho}}</td>   
-                    <td (click)="populateForm(pro)">{{pro.TotGamBirSho}}</td>               
+                <tr *ngFor = "let pro of service.list |async | paginate: { id: 'pager', itemsPerPage: pageSize, currentPage: pageNumber};let index = index" >
+                    <td (click)="populateForm(pro)">{{pro.FirstName  | json  }}</td>
+                    <td (click)="populateForm(pro)">{{pro.LastName | json}}</td>
+                    <td (click)="populateForm(pro)">{{pro.Liscence | json}}</td>
+                    <td (click)="populateForm(pro)">{{pro.email |json}}</td>
+                    <td (click)="populateForm(pro)">{{pro.tele |json }}</td>
+                    <td (click)="populateForm(pro)">{{pro.TotProBirSho | json}}</td>   
+                    <td (click)="populateForm(pro)">{{pro.TotGamBirSho | json}}</td>               
                     <td><button (click)="onDelete(pro.Liscence)" class="btn btn-sm btn-outline-danger">X</button></td>
                 </tr>
               </tbody>

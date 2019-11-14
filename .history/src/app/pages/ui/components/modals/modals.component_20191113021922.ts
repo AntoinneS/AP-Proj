@@ -18,10 +18,6 @@ export class ModalsComponent extends RootComponent implements OnInit {
   BarOption;
   PieOption;
 
-  /* pagination Info */
-  pageSize = 10;
-  pageNumber = 1;
-
   inputData :any = {
     GameReserve: 'Papine',
     Date: new Date(),
@@ -41,11 +37,6 @@ export class ModalsComponent extends RootComponent implements OnInit {
   openModal(modal) {
     modal.open();
   }
-
-  pageChanged(pN: number): void {
-    this.pageNumber = pN;
-  }
-  
   submitData(){
     console.log("submit button clicked with data",this.inputData);
     this.huntingService.saveDetailsDemo(this.inputData).subscribe((result )=>{

@@ -30,6 +30,13 @@ profile: Profile[];
     this.resetForm();
 }
 
+refreshProfileList(form: NgForm){
+  this.service.postProfile(form.value).subscribe(res => {
+    res !== null ;
+     this.docs = res.docs;
+  })
+}
+
 notification(type) {
   this.alertMessage(
     {
