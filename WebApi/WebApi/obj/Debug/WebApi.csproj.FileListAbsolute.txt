@@ -86,4 +86,3 @@ C:\Users\Antoine\AP-Proj\WebApi\WebApi\obj\Debug\WebApi.csproj.CoreCompileInputs
 C:\Users\Antoine\AP-Proj\WebApi\WebApi\obj\Debug\WebApi.csproj.CopyComplete
 C:\Users\Antoine\AP-Proj\WebApi\WebApi\obj\Debug\WebApi.dll
 C:\Users\Antoine\AP-Proj\WebApi\WebApi\obj\Debug\WebApi.pdb
-C:\Users\Antoine\AP-Proj\WebApi\WebApi\obj\Debug\WebApi.csprojAssemblyReference.cache

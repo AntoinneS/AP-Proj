@@ -27,7 +27,6 @@ export class ProfileComponent implements OnInit {
     this.Liscence = this.service.currentuser.Liscence;
     this.TotGamBirSho = this.service.currentuser.TotGamBirSho;
     this.TotProBirSho = this.service.currentuser.TotProBirSho;
-    this.ProPhotoS = this.service.currentuser.ProPhotoS;
   }
 
 }
