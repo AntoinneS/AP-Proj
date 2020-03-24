@@ -1,3 +1,4 @@
+Full Documentation as well as YouTube videos showing cases tools, frameworks, programming languages and rules used in Design folder.
 
 ## Getting started
 ```
